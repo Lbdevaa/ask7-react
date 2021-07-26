@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import NormalImg from 'components/Img';
+// import 'file?name=[name].[ext]!../img/yourimg.png';
 
 const Name = styled.p`
   background: rgba(30, 30, 30, 0.2);
@@ -78,7 +79,7 @@ class WorkListItem extends Component {
   }
 }
 
-WorkListItem.PropTypes = {
+WorkListItem.propTypes = {
   name: PropTypes.string,
 };
 

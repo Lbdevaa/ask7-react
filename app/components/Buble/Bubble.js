@@ -27,7 +27,7 @@ class Bubble extends Component {
     return <BubbleBox>{this.props.content}</BubbleBox>;
   }
 }
-Bubble.PropTypes = {
+Bubble.propTypes = {
   content: PropTypes.string,
 };
 Bubble.defaultProps = {

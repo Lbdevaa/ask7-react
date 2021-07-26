@@ -17,6 +17,7 @@ import Header from 'components/Header';
 import Chatbox from 'components/Chatbox';
 import GlobalStyle from '../../global-styles';
 import WorkList from '../../components/WorkList';
+import Wait from '../../components/Wait';
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
       <GlobalStyle />
       <Header />
       <Chatbox />
+      <Wait />
       <WorkList />
     </div>
   );

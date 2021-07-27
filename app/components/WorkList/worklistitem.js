@@ -26,8 +26,6 @@ const Name = styled.p`
 `;
 
 const Item = styled.div`
-  display: flex;
-  width: calc(100% / 12 * 3);
   &:hover {
     ${Name} {
       color: white;
@@ -71,7 +69,7 @@ class WorkListItem extends Component {
     return (
       <Item>
         <Link href="#">
-          <Img src={this.props.poster} alt={this.props.name} />
+          <Img src={this.props.poster} alt={this.props.name} loading="lazy" />
           <Name>{this.props.name}</Name>
         </Link>
       </Item>
@@ -81,6 +79,7 @@ class WorkListItem extends Component {
 
 WorkListItem.propTypes = {
   name: PropTypes.string,
+  poster: ''
 };
 
 WorkListItem.defaultProps = {

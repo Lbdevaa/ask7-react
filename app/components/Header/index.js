@@ -4,7 +4,7 @@ import Logo from './Logo';
 
 function Header() {
   return (
-    <div>
+    <div className="Logo">
       <Logo content="ask" contentSpan="7" />
     </div>
   );

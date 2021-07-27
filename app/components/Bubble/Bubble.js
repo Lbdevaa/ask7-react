@@ -4,17 +4,21 @@ import styled from 'styled-components';
 
 const BubbleBox = styled.div`
   max-width: 48rem;
-  border-radius: 0 2.5rem 2.5rem 0;
+  width: max-content;
   padding: 1.5rem 2.25rem;
   background: linear-gradient(135deg, #6b73ff 10%, #000dff 100%);
   line-height: 1.41;
-  -webkit-box-shadow: 1px 1px 2px rgb(30 30 30 / 20%);
   box-shadow: 1px 1px 2px rgb(30 30 30 / 20%);
   border-radius: 2.5rem 2.5rem 2.5rem 0;
   color: #fff;
-  line-height: 1.41;
-  margin: 0 0 20px;
-  width: max-content;
+  margin: 0 0 5px;
+  font-size: 1.4rem;
+  &:last-of-type {
+    border-radius: 0 2.5rem 2.5rem 2.5rem;
+  }
+  &:only-of-type {
+    border-radius: 2.5rem;
+  }
 `;
 
 class Bubble extends Component {
@@ -29,9 +33,11 @@ class Bubble extends Component {
 }
 Bubble.propTypes = {
   content: PropTypes.string,
+  timeToShow: PropTypes.number,
 };
 Bubble.defaultProps = {
-  content: 'Упс...',
+  content: 'Хм... Сейчас что-нибудь придумаем.',
+  timeToShow: '0.3',
 };
 
 export default Bubble;

@@ -1,0 +1,8 @@
+.message {
+  margin-bottom: 20px;
+}
+.message.guest {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}

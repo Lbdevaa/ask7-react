@@ -1,6 +1,5 @@
 import React from 'react';
 import './wait.css';
-// import './Button.scss';
 
 function Wait() {
   return (

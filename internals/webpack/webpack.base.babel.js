@@ -36,13 +36,13 @@ module.exports = options => ({
         exclude: /node_modules/,
         use: [
           'style-loader',
-          // 'css-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-            },
-          },
+          'css-loader',
+          // {
+          //   loader: 'css-loader',
+          //   options: {
+          //     modules: true,
+          //   },
+          // },
           // sass-loader should be at the bottom
           // 'sass-loader',
         ],

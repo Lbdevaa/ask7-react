@@ -79,7 +79,7 @@ class WorkListItem extends Component {
 
 WorkListItem.propTypes = {
   name: PropTypes.string,
-  poster: ''
+  poster: PropTypes.string,
 };
 
 WorkListItem.defaultProps = {

@@ -1,19 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
+import './index.css';
 
-const Link = styled.a`
-  color: inherit;
-  text-decoration: none;
-`
-
-function MyPhone(){
-  return(
-    <Link
-      href="tel:+79220256520"
-    >
-      Мой номер 📱 +7 (922) 0256-520
-    </Link>
-  )
+function MyPhone() {
+  return (
+    <a className="link" href="tel:+79220256520">
+      Мой номер +7 (922) 0256-520
+    </a>
+  );
 }
 
 export default MyPhone;

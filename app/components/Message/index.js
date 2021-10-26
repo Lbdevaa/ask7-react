@@ -32,10 +32,9 @@ import './message.css';
 
 // export default Message;
 
-// const Message = props => (
-const Message = () => (
+const Message = props => (
   <div className="message">
-    {/* {props.children} */}
+    {props.children}
     <CurrentTime />
   </div>
 );

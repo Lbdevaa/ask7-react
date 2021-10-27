@@ -2,11 +2,10 @@ import React from 'react';
 import CurrentTime from '../CurrentTime';
 import './index.sass';
 
-// function Message(props) {
-function Message() {
+function Message(PropTypes) {
   return (
     <div className="message">
-      {/* {props.children} */}
+      {PropTypes.children}
       <CurrentTime />
     </div>
   );

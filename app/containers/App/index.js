@@ -9,24 +9,23 @@
 
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import '../../styles/main.sass';
 
 // import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 import Header from 'components/Header';
 import Chatbox from 'components/Chatbox';
-import GlobalStyle from '../../global-styles';
 import Wait from '../../components/Wait';
 
 export default function App() {
   return (
     <div>
+      <Header />
       <Switch>
-        <Route exact path="/"  />
+        <Route exact path="/" />
         <Route component={NotFoundPage} />
       </Switch>
-      <GlobalStyle />
-      <Header />
       <Chatbox />
       <Wait />
     </div>

@@ -1,24 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
+import './index.sass';
+import MyPhone from 'components/MyPhone';
 import Bubble from '../Bubble';
 import WorkList from '../WorkList';
 import Message from '../Message';
-import './alert.css';
-import './index.css';
 
-class Chatbox extends Component {
-  render() {
-    return (
-      <div class="chatbox-container">
-        <Message>
-          <Bubble timeToShow="0.2" content="Привет, это сайт моей студии! 🤗" />
-          <Bubble timeToShow="0.5" content="Я занимаюсь дизайном и разработкой сайтов" />
-        </Message>
-        <Message>
-          <WorkList />
-        </Message>
-      </div>
-    );
-  }
+function Chatbox() {
+  return (
+    <div className="chatbox-container">
+      <Message>
+        <Bubble content="Привет, это сайт моей студии! 🤗" />
+        <Bubble content="Я занимаюсь дизайном и разработкой сайтов" />
+      </Message>
+      <Message>
+        <WorkList />
+      </Message>
+      <Message>
+        <Bubble content={<MyPhone />} />
+      </Message>
+    </div>
+  );
 }
 
 export default Chatbox;

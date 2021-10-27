@@ -1,26 +1,28 @@
-import React, { Component } from 'react';
-// import styled from 'styled-components';
-import WorkListItem from './worklistitem';
+import React from 'react';
+import WorkListItem from './WorkListItem';
+import logoUteh from '../../images/works/uteh.jpg';
+import logoLight from '../../images/works/light.jpg';
+import logoPrinter from '../../images/works/printer.gif';
+import logoUrist from '../../images/works/urist.jpg';
+import logoMed from '../../images/works/med.jpg';
+import logoUat from '../../images/works/uat.jpg';
 
-import './index.css'
+import './index.sass';
 
-class WorkList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div className="container">
-        <WorkListItem />
-        <WorkListItem />
-        <WorkListItem name="Наружная реклама в Екатеринбурге" poster="https://ask7.ru/img/2.jpg" />
-        <WorkListItem />
-        <WorkListItem name="Заправка и ремонт картриджей" poster="https://ask7.ru/img/3.gif" />
-        <WorkListItem name="Здравоохранение Тюменской области" poster="https://ask7.ru/img/5.jpg" />
-      </div>
-    );
-  }
+function WorkList() {
+  return (
+    <div className="container">
+      <WorkListItem name="Строительная полимерная компания" poster={logoUteh} />
+      <WorkListItem
+        name="Наружная реклама в Екатеринбурге"
+        poster={logoLight}
+      />
+      <WorkListItem name="Заправка и ремонт картриджей" poster={logoPrinter} />
+      <WorkListItem name="Инвестиционная компания" poster={logoUrist} />
+      <WorkListItem name="Здравоохранение Тюменской области" poster={logoMed} />
+      <WorkListItem name="Уральская Ассоциация Туризма" poster={logoUat} />
+    </div>
+  );
 }
+
 export default WorkList;

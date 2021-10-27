@@ -4,6 +4,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 
 module.exports = options => ({
   mode: options.mode,
@@ -22,10 +23,13 @@ module.exports = options => ({
       {
         test: /\.jsx?$/, // Transform all .js and .jsx files required somewhere with Babel
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: options.babelQuery,
-        },
+        use: [
+          {
+            loader: 'babel-loader',
+            options: options.babelQuery,
+          },
+          // 'astroturf/loader',
+        ],
       },
       {
         // Preprocess our own .css files
@@ -36,6 +40,7 @@ module.exports = options => ({
         use: [
           'style-loader',
           'css-loader',
+          // 'postcss-loader',
           // {
           //   loader: 'css-loader',
           //   options: {
@@ -124,6 +129,11 @@ module.exports = options => ({
     // drop any unreachable code.
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development',
+    }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        postcss: [autoprefixer()],
+      },
     }),
   ]),
   resolve: {

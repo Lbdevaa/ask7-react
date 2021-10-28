@@ -3,7 +3,7 @@ import './index.sass';
 
 function MyPhone() {
   return (
-    <a className="link" href="tel:+79220256520">
+    <a className="phone-link" href="tel:+79220256520">
       Мой номер{' '}
       <span aria-label="phone" role="img">
         📱

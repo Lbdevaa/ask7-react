@@ -4,7 +4,7 @@ import './index.sass';
 
 function Message(PropTypes) {
   return (
-    <div className="message">
+    <div className="message" id={PropTypes.id}>
       {PropTypes.children}
       <CurrentTime />
     </div>

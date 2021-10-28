@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import './index.sass';
 
 function Bubble(props) {
-  return <div className="bubble-box">{props.content}</div>;
+  return (
+    <div className="bubble">
+      <span className="bubble__text">{props.content}</span>
+    </div>
+  );
 }
 
 Bubble.propTypes = {

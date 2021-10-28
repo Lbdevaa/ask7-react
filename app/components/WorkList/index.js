@@ -11,16 +11,16 @@ import './index.sass';
 
 function WorkList() {
   return (
-    <div className="container">
-      <WorkListItem name="Строительная полимерная компания" poster={logoUteh} />
-      <WorkListItem
+    <div className="container work-list">
+      <WorkListItem link="https://uteh.ru/" name="Строительная полимерная компания" poster={logoUteh} />
+      <WorkListItem link="https://lightnr.ru/"
         name="Наружная реклама в Екатеринбурге"
         poster={logoLight}
       />
-      <WorkListItem name="Заправка и ремонт картриджей" poster={logoPrinter} />
-      <WorkListItem name="Инвестиционная компания" poster={logoUrist} />
-      <WorkListItem name="Здравоохранение Тюменской области" poster={logoMed} />
-      <WorkListItem name="Уральская Ассоциация Туризма" poster={logoUat} />
+      <WorkListItem link="http://skynet-print.ru/" name="Заправка и ремонт картриджей" poster={logoPrinter} />
+      <WorkListItem link="http://sm-profit.ru/" name="Инвестиционная компания" poster={logoUrist} />
+      <WorkListItem link="https://www.medinfo72.ru/" name="Здравоохранение Тюменской области" poster={logoMed} />
+      <WorkListItem link="https://www.uat1996.ru/" name="Уральская Ассоциация Туризма" poster={logoUat} />
     </div>
   );
 }

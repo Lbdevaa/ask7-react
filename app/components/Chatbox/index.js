@@ -7,15 +7,15 @@ import Message from '../Message';
 
 function Chatbox() {
   return (
-    <div className="chatbox-container">
-      <Message>
+    <div className="chatbox">
+      <Message id="bubble-1">
         <Bubble content="Привет, это сайт моей студии! 🤗" />
         <Bubble content="Я занимаюсь дизайном и разработкой сайтов" />
       </Message>
-      <Message>
+      <Message id="bubble-2">
         <WorkList />
       </Message>
-      <Message>
+      <Message id="bubble-3">
         <Bubble content={<MyPhone />} />
       </Message>
     </div>

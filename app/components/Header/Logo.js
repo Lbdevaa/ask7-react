@@ -4,10 +4,10 @@ import './index.sass';
 
 function Logo(props) {
   return (
-    <div className="logo__container">
-      <span className="logo__text">{props.content}</span>
+    <a href="/" className="logo__container">
+      {props.content}
       <span className="logo__num">{props.contentSpan}</span>
-    </div>
+    </a>
   );
 }
 

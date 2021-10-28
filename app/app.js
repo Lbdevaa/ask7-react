@@ -16,6 +16,8 @@ import { ConnectedRouter } from 'connected-react-router';
 import history from 'utils/history';
 import 'sanitize.css/sanitize.css';
 
+import 'styles/main.sass';
+
 // Import root app
 import App from 'containers/App';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import './wait.css';
+import './wait.sass';
 
 function Wait() {
   return (

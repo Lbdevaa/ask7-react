@@ -1,15 +1,52 @@
 .logo
+  display: block
+  padding: 2.5rem 2.5rem 10rem 2.5rem
+  font-size: 7rem
+  font-weight: 900
+  line-height: .73
+  color: #1e1e1e
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  cursor: default
+  position: relative
+  -webkit-animation-name: logo-animate
+  animation-name: logo-animate
+  -webkit-animation-duration: 740ms
+  animation-duration: 740ms
+  -webkit-animation-timing-function: cubic-bezier(0.46,0.03,0.52,0.96)
+  animation-timing-function: cubic-bezier(0.46,0.03,0.52,0.96)
+  will-change: transform,opacity
   &__container
-    font-size: 7rem
-    line-height: 0.73
     text-transform: uppercase
-    padding: 40px 40px 160px
-  &__text
-    font-weight: 900
     color: #1e1e1e
+    text-decoration: none
+    font-weight: 900
   &__num
     font-weight: 300
     background: linear-gradient(135deg, #6b73ff 10%, #000dff 100%)
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
-    margin-left: 15px
+    margin-left: 30px
+
+@keyframes logo-animate
+  0%
+    opacity: 0
+    -webkit-transform: translateY(-20px)
+    transform: translateY(-20px)
+
+  10%
+    opacity: 0
+    -webkit-transform: translateY(-18px)
+    transform: translateY(-18px)
+
+  100%
+    opacity: 1
+    -webkit-transform: translateY(0)
+    transform: translateY(0)
+
+@media (max-width: 767px)
+  .logo
+    font-size: 77px
+    padding: 20px 30px 100px

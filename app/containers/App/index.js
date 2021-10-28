@@ -9,13 +9,13 @@
 
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import 'components/alert.css';
 
 // import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 import Header from 'components/Header';
 import Chatbox from 'components/Chatbox';
-import Wait from '../../components/Wait';
 
 export default function App() {
   return (
@@ -26,7 +26,6 @@ export default function App() {
         <Route component={NotFoundPage} />
       </Switch>
       <Chatbox />
-      <Wait />
     </div>
   );
 }

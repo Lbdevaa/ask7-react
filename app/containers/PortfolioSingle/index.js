@@ -8,6 +8,7 @@ import React from 'react';
 
 import { FormattedMessage } from 'react-intl';
 import Container from 'components/Container';
+import LandingBrowser from 'components/LandingBrowser';
 import messages from './messages';
 
 export default function PortfolioSingle() {
@@ -27,6 +28,7 @@ export default function PortfolioSingle() {
           Cтроительная компания с собственным производством. УралПолиКом
           занимается монтажом и продажей наливных полимерных полов.
         </p>
+        <LandingBrowser />
       </Container>
     </div>
   );

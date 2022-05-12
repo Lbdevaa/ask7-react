@@ -8,24 +8,26 @@
  */
 
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'components/alert.css';
 
-// import HomePage from 'containers/HomePage/Loadable';
+import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import PortfolioPage from 'containers/PortfolioPage/Loadable';
 
 import Header from 'components/Header';
-import Chatbox from 'components/Chatbox';
 
 export default function App() {
   return (
     <div>
       <Header />
-      <Switch>
-        <Route exact path="/" />
-        <Route component={NotFoundPage} />
-      </Switch>
-      <Chatbox />
+      <Router>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/portfolio" component={PortfolioPage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </Router>
     </div>
   );
 }

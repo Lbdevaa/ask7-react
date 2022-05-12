@@ -43,6 +43,9 @@ const Chatbox = () => {
           <Message>
             <Bubble content={<MyPhone />} />
           </Message>
+          <Message>
+            <Bubble content={<a href="/portfolio">Загляни в портфолио</a>} />
+          </Message>
         </div>
       </CSSTransition>
       {showButton && (

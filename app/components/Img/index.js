@@ -7,9 +7,20 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import './index.sass';
 
 function Img(props) {
-  return <img className={props.className} src={props.src} alt={props.alt} />;
+  return (
+    <picture className="picture">
+      <source src={props.src} type="image/svg+xml" />
+      <img
+        className={`${props.className} picture__img`}
+        src={props.src}
+        alt={props.alt}
+        loading="lazy"
+      />
+    </picture>
+  );
 }
 
 // We require the use of src and alt, only enforced by react in dev mode

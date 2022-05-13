@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 
 const List = styled.ul`
-  font-family: Georgia, Times, 'Times New Roman', serif;
-  padding-left: 1.75em;
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
 `;
 
 export default List;

@@ -9,13 +9,18 @@ import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
+import styled from 'styled-components';
+import NormalImg from 'components/Img';
 
 import Container from 'components/Container';
 import PortfolioSingle from 'containers/PortfolioSingle/Loadable';
+import imgUteh from 'components/LandingBrowser/site-uteh.png';
 import messages from './messages';
 import List from './List';
 import ListItem from './ListItem';
 import ListItemTitle from './ListItemTitle';
+
+const Img = styled(NormalImg)``;
 
 export default function PortfolioPage() {
   // The `path` lets us build <Route> paths that are
@@ -32,17 +37,18 @@ export default function PortfolioPage() {
               <title>Портфолио студии</title>
               <meta name="description" content="Портфолио" />
             </Helmet>
-            <h1>
+            <h1 className="page-title">
               <FormattedMessage {...messages.header} />
             </h1>
             <List>
               <ListItem>
+                <Img src={imgUteh} className="protfolio__img" alt="" />
                 <ListItemTitle>
                   <FormattedMessage {...messages.scaffoldingHeader} />
                 </ListItemTitle>
-                <p>
+                <div className="text-box">
                   <FormattedMessage {...messages.scaffoldingMessage} />
-                </p>
+                </div>
                 <Link to={`${url}/site-uteh`}>Посмотреть</Link>
               </ListItem>
 

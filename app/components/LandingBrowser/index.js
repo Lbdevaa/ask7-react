@@ -11,13 +11,13 @@ function LandingBrowser(props) {
   return (
     <div className="landing-browser">
       <div className="landing-browser__top">
-        <Img src={browserTop} alt="" loading="lazy" />
+        <Img src={browserTop} alt="" />
         <a href={props.link} target="blank" className="landing-browser__link">
           {props.link}
         </a>
       </div>
       <div className="landing-browser__content">
-        <Img src={props.poster} loading="lazy" alt={props.name} />
+        <Img src={props.poster} alt={props.name} />
       </div>
     </div>
   );

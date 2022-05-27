@@ -3,7 +3,6 @@
   color: #fff
   height: 100%
   margin-bottom: 0.3rem
-  -webkit-transition: border-radius .5s
   transition: border-radius .5s
   &:first-of-type .bubble__text
     border-radius: 2.5rem 2.5rem 2.5rem 0
@@ -22,57 +21,6 @@
     box-shadow: 1px 1px 2px #1e1e1e33
     &:last-child
       margin-bottom: 0
-
-#bubble-1
-  animation-name: bubble-1
-  animation-duration: 440ms
-  animation-timing-function: cubic-bezier(0.46,0.03,0.52,0.96)
-  will-change: transform,opacity
-
-@keyframes bubble-1
-  0%
-    opacity: 0
-    transform: translateY(20px)
-  10%
-    opacity: 0
-    transform: translateY(18px)
-  100%
-    opacity: 1
-    transform: translateY(0)
-
-#bubble-2
-  animation-name: bubble-2
-  animation-duration: 440ms
-  animation-timing-function: cubic-bezier(0.46,0.03,0.52,0.96)
-  will-change: transform,opacity
-
-@keyframes bubble-2
-  0%
-    opacity: 0
-    transform: translateY(20px)
-  10%
-    opacity: 0
-    transform: translateY(18px)
-  100%
-    opacity: 1
-    transform: translateY(0)
-
-#bubble-3
-  animation-name: bubble-3
-  animation-duration: 440ms
-  animation-timing-function: cubic-bezier(0.46,0.03,0.52,0.96)
-  will-change: transform,opacity
-
-@keyframes bubble-3
-  0%
-    opacity: 0
-    transform: translateY(20px)
-  10%
-    opacity: 0
-    transform: translateY(18px)
-  100%
-    opacity: 1
-    transform: translateY(0)
 
 @media (max-width: 767px)
   .bubble

@@ -7,7 +7,7 @@
 .alert-enter-active {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 1000ms, transform 1000ms;
+  transition: 1s;
 }
 
 .alert-exit {
@@ -17,5 +17,5 @@
 .alert-exit-active {
   opacity: 0;
   transform: translateY(-10%);
-  transition: opacity 1000ms, transform 1000ms;
+  transition: 1s;
 }

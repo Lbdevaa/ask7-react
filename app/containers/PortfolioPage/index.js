@@ -37,9 +37,6 @@ export default function PortfolioPage() {
               <title>Портфолио студии</title>
               <meta name="description" content="Портфолио" />
             </Helmet>
-            <div className="breadcrumbs">
-              <FormattedMessage {...messages.header} />
-            </div>
             <h1 className="page-title">
               <FormattedMessage {...messages.header} />
             </h1>
@@ -52,7 +49,7 @@ export default function PortfolioPage() {
                 <div className="text-box">
                   <FormattedMessage {...messages.scaffoldingMessage} />
                 </div>
-                <Link className="link" to={`${url}site-uteh`}>
+                <Link className="link" to={`${url}/site-uteh`}>
                   Посмотреть
                 </Link>
               </ListItem>

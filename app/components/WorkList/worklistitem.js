@@ -7,21 +7,26 @@ const Img = styled(NormalImg)``;
 
 function WorkListItem(props) {
   return (
-    <a className="work" href={props.link}>
-      <Img src={props.poster} alt={props.name} loading="lazy" className="work__img" />
+    <div className="work">
+      <Img
+        src={props.poster}
+        alt={props.name}
+        loading="lazy"
+        className="work__picture"
+      />
       <p className="work__name">{props.name}</p>
-    </a>
+    </div>
   );
 }
 
 WorkListItem.propTypes = {
-  link: PropTypes.string,
+  // link: PropTypes.string,
   name: PropTypes.string,
   poster: PropTypes.string,
 };
 
 WorkListItem.defaultProps = {
-  link: 'ya.ru',
+  // link: 'ya.ru',
   name: 'Строительная полимерная компания',
   poster: 'https://source.unsplash.com/random',
 };

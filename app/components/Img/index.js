@@ -11,10 +11,10 @@ import './index.sass';
 
 function Img(props) {
   return (
-    <picture className="picture">
+    <picture className={`${props.className} picture`}>
       <source src={props.src} type="image/svg+xml" />
       <img
-        className={`${props.className} picture__img`}
+        className="picture__img"
         src={props.src}
         alt={props.alt}
         loading="lazy"

@@ -4,7 +4,7 @@ import './index.sass';
 import styled from 'styled-components';
 import NormalImg from 'components/Img';
 import browserTop from './browser-top.png';
-import utehImg from './site-uteh.png';
+// import utehImg from './site-uteh.png';
 const Img = styled(NormalImg)``;
 
 function LandingBrowser(props) {
@@ -30,9 +30,9 @@ LandingBrowser.propTypes = {
 };
 
 LandingBrowser.defaultProps = {
-  link: 'http://uteh.ru/',
-  name: 'Строительная полимерная компания',
-  poster: utehImg,
+  // link: 'http://uteh.ru/',
+  // name: 'Строительная полимерная компания',
+  // poster: utehImg,
 };
 
 export default LandingBrowser;

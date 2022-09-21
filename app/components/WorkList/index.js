@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
-import WorkListItem from './WorkListItem';
+import WorkListItem from './worklistitem';
 import logoUteh from '../../images/works/uteh.jpg';
 import logoLight from '../../images/works/light.jpg';
 import logoPrinter from '../../images/works/printer.gif';

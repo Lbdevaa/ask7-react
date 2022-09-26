@@ -5,16 +5,17 @@ import './index.sass';
 function Bubble(props) {
   return (
     <div className="bubble">
-      <span className="bubble__text">{props.content}</span>
+      <div className="bubble__content">
+        <p>{props.text || ''}</p>
+        {props.children}
+      </div>
     </div>
   );
 }
 
 Bubble.propTypes = {
-  content: PropTypes.string,
-};
-Bubble.defaultProps = {
-  content: 'Хм... Сейчас что-нибудь придумаем.',
+  text: PropTypes.any,
+  children: PropTypes.any,
 };
 
 export default Bubble;

@@ -17,7 +17,7 @@ function LandingBrowser(props) {
         </a>
       </div>
       <div className="landing-browser__content">
-        <Img src={props.poster} alt={props.name} />
+        <Img src={props.poster} alt={props.alt} />
       </div>
     </div>
   );
@@ -25,7 +25,7 @@ function LandingBrowser(props) {
 
 LandingBrowser.propTypes = {
   link: PropTypes.string,
-  name: PropTypes.string,
+  alt: PropTypes.string,
   poster: PropTypes.string,
 };
 

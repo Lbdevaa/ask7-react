@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { CSSTransition } from 'react-transition-group';
 // import { useParams } from 'react-router-dom';
 import {
@@ -15,13 +15,13 @@ import {
   useParams,
 } from 'react-router-dom';
 
-import { FormattedMessage } from 'react-intl';
+// import { FormattedMessage } from 'react-intl';
 import Container from 'components/Container';
 import LandingBrowser from 'components/LandingBrowser';
 import { Helmet } from 'react-helmet';
 import Wait from 'components/Wait';
-import utehImg from 'components/LandingBrowser/site-uteh.png';
-import messages from './messages';
+// import messages from './messages';
+import { projectsData } from 'data/projects/projectList';
 import Breadcrumbs from './Breadcrumbs';
 
 /**
@@ -43,6 +43,7 @@ function PortfolioSingle() {
 
   const [show, setShow] = useState(false);
   const [showButton, setShowButton] = useState(true);
+  const thisProjectData = projectsData.find(project => project.id === slug);
 
   React.useEffect(() => {
     setTimeout(() => setShow(!show), 200);
@@ -55,34 +56,24 @@ function PortfolioSingle() {
           {/* <Route path="/blog/:slug"> */}
           <Container>
             <Helmet>
-              <title>Проект</title>
+              <title>
+                Проект {thisProjectData.name} | Студия разработки сайтов
+              </title>
               <meta name="description" content="Портфолио" />
             </Helmet>
             <Breadcrumbs>
               <Link className="link breadcrumbs__link" to="/">
                 Главная
               </Link>
-              {/* <Link className="link breadcrumbs__link" to="/portfolio">
-                Портфолио
-              </Link> */}
               |
-              <span className="breadcrumbs__text">
-                <FormattedMessage {...messages.header} />
-              </span>
+              <Link className="link breadcrumbs__link" to="/portfolio">
+                Портфолио
+              </Link>
+              |<span className="breadcrumbs__text">{thisProjectData.name}</span>
             </Breadcrumbs>
-            <h1>
-              {/* <p>slug: {slug}</p> */}
-
-              <FormattedMessage {...messages.header} />
-              {/* {data.title} */}
-            </h1>
+            <h1>{thisProjectData.name}</h1>
             <div className="text-box">
-              {/* {data.html} */}
-              <p>УралПолиКом - компания, делает наливные полы с 2004 года.</p>
-              <p>
-                Cтроительная компания с собственным производством. УралПолиКом
-                занимается монтажом и продажей наливных полимерных полов.
-              </p>
+              <p>{thisProjectData.description}</p>
             </div>
             <CSSTransition
               in={show}
@@ -92,7 +83,10 @@ function PortfolioSingle() {
               onEntered={() => setShowButton(false)}
             >
               <div>
-                <LandingBrowser poster={slug === 'site-uteh' ? utehImg : ''} />
+                <LandingBrowser
+                  alt={thisProjectData.name}
+                  poster={thisProjectData ? thisProjectData.image : ''}
+                />
               </div>
             </CSSTransition>
 
@@ -109,10 +103,10 @@ function PortfolioSingle() {
 }
 
 PortfolioSingle.propTypes = {
-  title: PropTypes.string,
-  html: PropTypes.string,
-  location: PropTypes.object,
-  poster: PropTypes.string,
+  // title: PropTypes.string,
+  // html: PropTypes.string,
+  // location: PropTypes.any,
+  // poster: PropTypes.string,
   // location: PropTypes.object.isRequired,
 };
 

@@ -14,7 +14,7 @@ import NormalImg from 'components/Img';
 
 import Container from 'components/Container';
 import PortfolioSingle from 'containers/PortfolioSingle/Loadable';
-import imgUteh from 'components/LandingBrowser/site-uteh.png';
+import { projectsData } from 'data/projects/projectList';
 import messages from './messages';
 import List from './List';
 import ListItem from './ListItem';
@@ -34,25 +34,33 @@ export default function PortfolioPage() {
         <Route exact path={path}>
           <Container>
             <Helmet>
-              <title>Портфолио студии</title>
+              <title>
+                Портфолио студии | Студия разработки сайтов Александра Худякова
+              </title>
               <meta name="description" content="Портфолио" />
             </Helmet>
             <h1 className="page-title">
               <FormattedMessage {...messages.header} />
             </h1>
             <List>
-              <ListItem>
-                <Img src={imgUteh} className="protfolio__img" alt="" />
-                <ListItemTitle>
-                  <FormattedMessage {...messages.scaffoldingHeader} />
-                </ListItemTitle>
-                <div className="text-box">
-                  <FormattedMessage {...messages.scaffoldingMessage} />
-                </div>
-                <Link className="link" to={`${url}/site-uteh`}>
-                  Посмотреть
-                </Link>
-              </ListItem>
+              {projectsData
+                .slice(0, 6)
+                .map(({ id, poster, name, description }) => (
+                  <ListItem key={id}>
+                    <Img
+                      src={poster || ''}
+                      className="protfolio__img"
+                      alt={name || 'Проект'}
+                    />
+                    <ListItemTitle>{name}</ListItemTitle>
+                    <div className="text-box">
+                      <p>{description}</p>
+                    </div>
+                    <Link className="link" to={`${url}/${id}`}>
+                      Посмотреть
+                    </Link>
+                  </ListItem>
+                ))}
             </List>
           </Container>
         </Route>

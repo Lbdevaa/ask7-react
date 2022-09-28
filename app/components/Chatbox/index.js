@@ -65,8 +65,11 @@ const Chatbox = () => {
               className="btn chat-btn"
               type="button"
               onClick={event => {
-                event.target.classList.add('clicked');
+                event.target.classList.add('clicked', 'bubble__content');
                 setMoreProjects(true);
+                setTimeout(() => {
+                  window.scrollTo(0, document.body.scrollHeight);
+                }, 200);
               }}
             >
               Показать больше проектов

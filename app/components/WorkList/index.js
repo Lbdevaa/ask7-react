@@ -13,7 +13,7 @@ function WorkList() {
       <Route exact path={path}>
         <div className="work-list">
           {projectsData.slice(0, 6).map(({ id, poster, name }) => (
-            <Link className="link" to={`${url}portfolio/site-${id}`} key={id}>
+            <Link className="link" to={`${url}portfolio/${id}`} key={id}>
               <WorkListItem name={name} poster={poster} />
             </Link>
           ))}

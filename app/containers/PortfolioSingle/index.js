@@ -57,17 +57,20 @@ function PortfolioSingle() {
           <Container>
             <Helmet>
               <title>
-                Проект {thisProjectData.name} | Студия разработки сайтов
+                {/* Проект {thisProjectData.name} | Студия разработки сайтов */}
+                Project {thisProjectData.name} | Website development studio
               </title>
               <meta name="description" content="Портфолио" />
             </Helmet>
             <Breadcrumbs>
               <Link className="link breadcrumbs__link" to="/">
-                Главная
+                {/* Главная */}
+                Main
               </Link>
               |
               <Link className="link breadcrumbs__link" to="/portfolio">
-                Портфолио
+                {/* Портфолио */}
+                Portfolio
               </Link>
               |<span className="breadcrumbs__text">{thisProjectData.name}</span>
             </Breadcrumbs>

@@ -14,7 +14,7 @@ import NormalImg from 'components/Img';
 
 import Container from 'components/Container';
 import PortfolioSingle from 'containers/PortfolioSingle/Loadable';
-import { projectsData } from 'data/projects/projectList';
+import { projectsData } from 'data/projects/projectList-en';
 import messages from './messages';
 import List from './List';
 import ListItem from './ListItem';
@@ -43,24 +43,22 @@ export default function PortfolioPage() {
               <FormattedMessage {...messages.header} />
             </h1>
             <List>
-              {projectsData
-                .slice(0, 6)
-                .map(({ id, poster, name, description }) => (
-                  <ListItem key={id}>
-                    <Img
-                      src={poster || ''}
-                      className="protfolio__img"
-                      alt={name || 'Проект'}
-                    />
-                    <ListItemTitle>{name}</ListItemTitle>
-                    <div className="text-box">
-                      <p>{description}</p>
-                    </div>
-                    <Link className="link" to={`${url}/${id}`}>
-                      Посмотреть
-                    </Link>
-                  </ListItem>
-                ))}
+              {projectsData.map(({ id, poster, name, description }) => (
+                <ListItem key={id}>
+                  <Img
+                    src={poster || ''}
+                    className="protfolio__img"
+                    alt={name || 'Проект'}
+                  />
+                  <ListItemTitle>{name}</ListItemTitle>
+                  <div className="text-box">
+                    <p>{description}</p>
+                  </div>
+                  <Link className="link" to={`${url}/${id}`}>
+                    Посмотреть
+                  </Link>
+                </ListItem>
+              ))}
             </List>
           </Container>
         </Route>

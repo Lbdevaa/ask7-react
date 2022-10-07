@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
-import WorkListItem from './worklistitem';
+import WorkListItem from './WorkListItem';
 
 import './index.sass';
 // eslint-disable-next-line import/order

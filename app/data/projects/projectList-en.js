@@ -4,12 +4,14 @@ import imgLight from './images/light.png';
 import imgLightPoster from './images/light-poster.jpg';
 import imgSkynet from './images/skynet-print.png';
 import imgSkynetPoster from './images/skynet-print-poster.gif';
-import imgSmProfitPrint from './images/sm-profit.jpg';
+// import imgSmProfitPrint from './images/sm-profit.jpg';
 // import imgSmProfitPrintPoster from './images/sm-profit.jpg';
 import imgMedinfo from './images/medinfo72.png';
 import imgMedinfoPoster from './images/medinfo72-poster.jpg';
 import imgUat from './images/uat1996.png';
 import imgUatPoster from './images/uat1996-poster.jpg';
+import imgBuisnessplus from './images/buisnessplus.png';
+import imgBuisnessplusPoster from './images/buisnessplus-poster.png';
 import imgAlliance from './images/alliancekb.png';
 import imgAlliancePoster from './images/alliancekb-poster.png';
 import imgFreddo from './images/freddo96.png';
@@ -50,7 +52,7 @@ export const projectsData = [
     image: imgLight,
     poster: imgLightPoster,
     description: `
-      
+      The group of companies "Light" (LIGHT) has been successfully working in the advertising market for many years.
     `,
   },
   {
@@ -60,17 +62,7 @@ export const projectsData = [
     image: imgSkynet,
     poster: imgSkynetPoster,
     description: `
-      
-    `,
-  },
-  {
-    id: 'sm-profit',
-    link: 'http://sm-profit.ru/',
-    name: 'Investment company',
-    image: imgSmProfitPrint,
-    poster: imgSmProfitPrint,
-    description: `
-      
+    Repair company. Cartridge refilling, equipment repair.
     `,
   },
   {
@@ -101,11 +93,6 @@ export const projectsData = [
     poster: imgTdmonolitPoster,
   },
   {
-    id: 'favorite',
-    name: 'Favorite',
-    link: '',
-  },
-  {
     id: 'alliance',
     name: 'Alliance',
     link: 'https://alliancekb.ru/',
@@ -130,6 +117,8 @@ export const projectsData = [
     id: 'buisnessplus',
     name: 'Investment company',
     link: 'https://buisnessplus.ru/',
+    image: imgBuisnessplus,
+    poster: imgBuisnessplusPoster,
   },
   {
     id: 'doctorlevin',

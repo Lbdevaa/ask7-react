@@ -8,11 +8,20 @@ import { projectsData } from 'data/projects/projectList-en';
 
 function WorkList() {
   const { path, url } = useRouteMatch();
+  const getRandomInt = max => Math.floor(Math.random() * Math.floor(max));
+
+  let randomProject = [];
+  while (randomProject.length !== 6) {
+    const index = getRandomInt(projectsData.length);
+    randomProject.push(projectsData[index]);
+    randomProject = randomProject.filter((v, i, arr) => arr.indexOf(v) === i);
+  }
+
   return (
     <Switch>
       <Route exact path={path}>
         <div className="work-list">
-          {projectsData.slice(0, 6).map(({ id, poster, name }) => (
+          {randomProject.map(({ id, poster, name }) => (
             <Link className="link" to={`${url}portfolio/${id}`} key={id}>
               <WorkListItem name={name} poster={poster} />
             </Link>

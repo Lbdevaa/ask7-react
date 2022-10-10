@@ -24,9 +24,12 @@ const Chatbox = () => {
       <CSSTransition in={show} timeout={1000} classNames="alert" unmountOnExit>
         <>
           <Message>
-            <Bubble text="Привет, это сайт моей студии! 🤗" />
+            {/* <Bubble text="Привет, это сайт моей студии! 🤗" />
             <Bubble text="Разрабатываем сайты, встраиваем в систему управления и делаем дизайн" />
-            <Bubble text="Вот некоторые из готовых работ" />
+            <Bubble text="Вот некоторые из готовых работ" /> */}
+            <Bubble text="Hello everybody! Welcome! This is my studio website 🤗" />
+            <Bubble text="We develop websites, integrate them into the management system and make design" />
+            <Bubble text="Here are some of the completed works" />
           </Message>
         </>
       </CSSTransition>
@@ -38,13 +41,7 @@ const Chatbox = () => {
         </>
       </CSSTransition>
 
-      <CSSTransition
-        in={show}
-        timeout={1000}
-        classNames="alert"
-        unmountOnExit
-        // onEntered={() => setShowButton(false)}
-      >
+      <CSSTransition in={show} timeout={1000} classNames="alert" unmountOnExit>
         <>
           <Message>
             <Bubble text={<MyPhone />} />
@@ -72,7 +69,8 @@ const Chatbox = () => {
                 }, 200);
               }}
             >
-              Показать больше проектов
+              {/* Показать больше проектов */}
+              Show more projects
             </button>
             {/* <Bubble text="Показать больше проектов" /> */}
           </Message>
@@ -82,11 +80,13 @@ const Chatbox = () => {
         <Message>
           <Bubble>
             <Link className="link" to={`${url}portfolio`}>
-              Вот
+              {/* Вот */}
+              Here is
               <span role="img" aria-label="pointer">
                 👉
               </span>
-              страница портфолио
+              {/* страница портфолио */}
+              the portfolio page
             </Link>
           </Bubble>
         </Message>

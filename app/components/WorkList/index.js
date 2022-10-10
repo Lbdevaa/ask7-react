@@ -4,7 +4,7 @@ import WorkListItem from './WorkListItem';
 
 import './index.sass';
 // eslint-disable-next-line import/order
-import { projectsData } from 'data/projects/projectList';
+import { projectsData } from 'data/projects/projectList-en';
 
 function WorkList() {
   const { path, url } = useRouteMatch();

@@ -8,14 +8,14 @@ import React from 'react';
 import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { Helmet } from 'react-helmet';
-import { FormattedMessage } from 'react-intl';
+// import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import NormalImg from 'components/Img';
 
 import Container from 'components/Container';
 import PortfolioSingle from 'containers/PortfolioSingle/Loadable';
 import { projectsData } from 'data/projects/projectList-en';
-import messages from './messages';
+// import messages from './messages';
 import List from './List';
 import ListItem from './ListItem';
 import ListItemTitle from './ListItemTitle';
@@ -35,12 +35,16 @@ export default function PortfolioPage() {
           <Container>
             <Helmet>
               <title>
-                Портфолио студии | Студия разработки сайтов Александра Худякова
+                {/* Портфолио студии | Студия разработки сайтов Александра Худякова */}
+                Studio portfolio | Website Development Studio Alexander
+                Khudyakov
               </title>
-              <meta name="description" content="Портфолио" />
+              {/* <meta name="description" content="Портфолио" /> */}
+              <meta name="description" content="Portfolio" />
             </Helmet>
             <h1 className="page-title">
-              <FormattedMessage {...messages.header} />
+              Portfolio
+              {/* <FormattedMessage {...messages.header} /> */}
             </h1>
             <List>
               {projectsData.map(({ id, poster, name, description }) => (
@@ -55,7 +59,8 @@ export default function PortfolioPage() {
                     <p>{description}</p>
                   </div>
                   <Link className="link" to={`${url}/${id}`}>
-                    Посмотреть
+                    {/* Посмотреть */}
+                    More
                   </Link>
                 </ListItem>
               ))}

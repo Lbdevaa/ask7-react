@@ -21,7 +21,7 @@ import LandingBrowser from 'components/LandingBrowser';
 import { Helmet } from 'react-helmet';
 import Wait from 'components/Wait';
 // import messages from './messages';
-import { projectsData } from 'data/projects/projectList';
+import { projectsData } from 'data/projects/projectList-en';
 import Breadcrumbs from './Breadcrumbs';
 
 /**
@@ -60,7 +60,8 @@ function PortfolioSingle() {
                 {/* Проект {thisProjectData.name} | Студия разработки сайтов */}
                 Project {thisProjectData.name} | Website development studio
               </title>
-              <meta name="description" content="Портфолио" />
+              {/* <meta name="description" content="Портфолио" /> */}
+              <meta name="description" content="Portfolio" />
             </Helmet>
             <Breadcrumbs>
               <Link className="link breadcrumbs__link" to="/">
@@ -89,6 +90,7 @@ function PortfolioSingle() {
                 <LandingBrowser
                   alt={thisProjectData.name}
                   poster={thisProjectData ? thisProjectData.image : ''}
+                  link={thisProjectData.link}
                 />
               </div>
             </CSSTransition>

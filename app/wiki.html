@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+ 
+  <!-- МЕТА -->
+  <title>Студия разработки сайтов Александра Худякова</title>
+  <meta name="description" content="Внегласные правила по созданию эффектных и крутых сайтов с использованием сборки на gulp.">
+  <meta name="keywords" content="Разработка сайтов, git, flex, grid, sass, scss, es-6 ">
+ 
+  <!-- Яндекс.Браузер -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- собственные стили -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+ 
+</head>
+<body>
+  <style>
+    pre{
+      font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+      margin-bottom: 10px;
+      overflow: auto;
+      width: auto;
+      padding: 5px;
+      background-color: #eee;
+      padding-bottom: 20px;
+      width: 100%;
+      max-height: 600px;
+      margin: 20px 0;
+      border-radius: 30px;
+    }
+    .wiki-main__wrap {
+      max-width: 1200px;
+      margin: 2.5rem 2.5rem 10rem 2.5rem;
+    }
+    h2 {
+      margin: 0 0 20px;
+    }
+    .text-box p{
+      line-height: 1.4;
+      margin:  0 0 10px;
+    }
+    .text-box a {
+      color: #3d46ff;
+      text-decoration: none;
+    }
+    .text-box ul {
+      list-style: none;
+    }
+    .text-box ul li {
+      padding-left: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+  <header class="header">
+    <div class="logo">ASK <span class="logo__number">7</span></div>
+    <!-- /.logo -->
+  </header>
+  <!-- /.header -->
+
+  <main class="wiki-main">
+    <div class="wiki-main__wrap">
+      <h2>First mobile</h2>
+      <div class="text-box">
+        <p>
+          Основываясь на том, что ПК является более "мощным" устройством для отображения страниц в браузере, верстка начинается с мобильной версии.
+        </p>
+        <p>Media-запросы будут выглядеть следующим образом.</p>
+      </div>
+
+      <pre><code>
+        /*==========	Mobile First	==========*/
+
+        /* Custom, iPhone Retina */
+        @media only screen and (min-width : 320px)
+          /**/
+
+        /* Extra Small Devices, Phones */
+        @media only screen and (min-width : 480px)
+          /**/
+
+        /* Small Devices, Tablets */
+        @media only screen and (min-width : 768px)
+          /**/
+
+        /* Medium Devices, Desktops */
+        @media only screen and (min-width : 992px)
+          /**/
+
+        /* Large Devices, Wide Screens */
+        @media only screen and (min-width : 1200px)
+          /**/
+      </code></pre>
+
+      <h2>Float/Flex/Grid</h2>
+      <div class="text-box">
+       
+        <p>Куда смотреть? Немного статистики (07/21):</p>
+        
+        <ul>
+          <li> <a href="https://caniuse.com/?search=float">Float</a>: 97.05%</li>
+          <li><a href="https://caniuse.com/flexbox">Flex</a>: 99.67%</li>
+          <li><a href="https://caniuse.com/css-grid">Grid</a>: 95.98%</li>
+        </ul>
+        <p>Походкой победителя... Flexbox!</p>
+        <p>
+          База - Flex.
+          Изредка можем позволить себе и Grid.
+        </p>
+      </div>
+      <pre><code> 
+        display: flex;
+      </code></pre>
+
+      <h2>Grid?</h2>
+      <div class="text-box">
+        <p>
+          Почему бы и нет?!
+        </p>
+      </div>
+      <pre><code>
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr 1fr
+        grid-row-gap: 20px
+        grid-column-gap: 10px
+
+      </code></pre>
+
+      <h2>Picture</h2>
+      <div class="text-box">
+        <p>
+          Интересный подход к формированию недекоративных изображений.
+        </p>
+        <p>
+          И конечно loading="lazy".
+        </p>
+        <!-- Замените символ & на &amp;
+        Замените символ < на &lt;
+        Замените символ > на &gt; -->
+         
+          <blockquote>
+            <pre><code>
+
+              &lt;picture class="picture"&gt;
+                &lt;source media="(min-width: 40em)" srcset="big.jpg 1x, big-hd.jpg 2x"&gt;
+                &lt;source srcset="small.jpg 1x, small-hd.jpg 2x" type="image/svg+xml"&gt;
+                &lt;img src="img/car.jpg" alt="My car bmw" class="picture__img" loading="lazy" srcset="large.jpg 1024w, medium.jpg 640w, small.jpg 320w"&gt;
+              &lt;/picture&gt;  
+
+            </code></pre>
+          </blockquote>
+         
+      </div>
+
+      <h2>EM/REM</h2>
+      <div class="text-box">
+        <p>
+          Использовать em очень просто. Обозначим это следующим образом. Зачастую это rem.
+        </p>
+        <pre><code>
+          /* 16px */
+          @function em($pixels, $context: 16px)
+            @return #{$pixels/$context}em
+
+          @function rem($pixels, $context: 16px)
+            @return #{$pixels/$context}rem
+          
+          /* use */
+          font-size: rem(16px)
+          
+        </code></pre>
+      </div>
+
+      <h2>CSS-препроцессоры</h2>
+      <div class="text-box">
+        <p>
+          - Есть что попроще?
+        </p>
+        <p>
+          - SASS! SCSS тоже пригодится.
+        </p>
+        <pre><code>
+          // _base.sass
+          $font-stack:    Helvetica, sans-serif
+          $primary-color: #333
+
+          body
+            font: 100% $font-stack
+            color: $primary-color
+            
+          // styles.sass
+          @use 'base'
+          .inverse
+            background-color: base.$primary-color
+          
+        </code></pre>
+      </div>
+
+      <h2>SVG фавиконки</h2>
+      <div class="text-box">
+        <p>
+          Файл manifest.json предоставляет информацию о вашем веб-приложении или веб-сайте. Эти строки являются обязательными для прохождения теста Lighthouse.
+        </p>
+        <pre><code>
+          {
+            "name": "Starter",
+            "short_name": "Starter",
+            "icons": [{
+              "src": "google-touch-icon.png",
+              "sizes": "512x512"
+            }],
+            "background_color": "#ffffff",
+            "theme_color": "#ffffff",
+            "display": "fullscreen"
+          }
+        </code></pre>
+        <p>
+          theme-color meta по-прежнему требуется для цвета иконки в Chrome и Android.
+        </p>
+        <pre><code>
+          &lt;meta name="theme-color" content="#ffffff"&gt;
+        </code></pre>
+        <p>
+          И результат:
+        </p>
+        <pre><code>
+          &lt;meta name="theme-color" content="#ffffff"&gt;
+          &lt;meta name="theme-color" content="#ffffff"&gt;
+          &lt;link rel="icon" href="favicon.svg"&gt;
+          &lt;link rel="mask-icon" href="mask-icon.svg" color="#000000"&gt;
+          &lt;link rel="apple-touch-icon" href="apple-touch-icon.png"&gt;
+          &lt;link rel="manifest" href="manifest.json"&gt;
+        </code></pre>
+      </div>
+      
+      <h2>Line-height - наше всё. Или бережём глаза читателю.</h2>
+      <div class="text-box">
+        <p>
+          Использовать em очернь просто. Обозначим это следующим образом.
+        </p>
+        <pre><code>
+          /* Title. Medium scales */
+          line-height: 1.2
+          
+          /* Text-box. Large scales*/
+          line-height: 1.618
+          
+          /* Short-intro. Most popular */
+          line-height: 1.44
+        </code></pre>
+      </div>
+      <h2>Google font-family</h2>
+      <div class="text-box">
+        <p>
+          Наш специфический друг временами не дружит с iPhone. А что, если unicode-range...
+        </p>
+        <pre><code>
+          @font-face {
+            font-family: 'Rubik';
+            src: local("../fonts/Rubik-Regular.ttf"), url("../fonts/Rubik-Regular.ttf") format("truetype");
+            font-weight: normal;
+            font-display: swap;
+            font-style: normal;
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        </code></pre>
+      </div>
+
+      <h2>Links/buttons</h2>
+      <div class="text-box">
+        <p>
+          Зачем пользователю лишний раз выделять текст?!
+        </p>
+        <pre><code> 
+          user-select: none
+        </code></pre>
+      </div>
+      <h2>Полезные ссылки.</h2>
+      <div class="text-box">
+        <p>
+          <a href="https://www.30secondsofcode.org/js/p/1">30secondsofcode</a> 
+        </p>
+        <p>
+          <a href="https://habr.com/ru/company/yandex/blog/559442/"> Img  Доклад Яндекса 15/06/21</a>
+        </p>
+        <p>
+          <a href="https://habr.com/ru/company/vdsina/blog/555736/"> Почему стоит использовать тег  Picture  вместо  Img 05/05/21</a>
+        </p>
+        <p>
+          <a href="https://habr.com/ru/company/ruvds/blog/448914/"> Ленивая загрузка изображений средствами браузера 29/04/19</a>
+        </p>
+        <p>
+          <a href="https://komarketing.com/resources/keyword-generator/"> Keyword List Generator</a>
+        </p>
+        <p>
+          <a href="https://habr.com/ru/post/552900/"> SVG фавиконки</a>
+        </p>
+        <p>
+          <a href="https://habr.com/ru/company/macloud/blog/555082/"> Базовая структура HTML-документа с объяснением каждой строчки 04/05/21</a>
+        </p>
+      </div>
+
+
+    </div>
+  </main>
+ 
+  <!-- Yandex.Metrika counter --> <script> (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(57879655, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/57879655" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+
+</body>
+</html>

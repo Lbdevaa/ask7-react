@@ -16,6 +16,8 @@ import imgAlliance from './images/alliancekb.png';
 import imgAlliancePoster from './images/alliancekb-poster.png';
 import imgFreddo from './images/freddo96.png';
 import imgFreddoPoster from './images/freddo96-poster.png';
+import imgTechSalt from './images/tech-salt.png';
+import imgTechSaltPoster from './images/tech-salt-poster.png';
 import imgTdmonolit from './images/td-monolit.png';
 import imgTdmonolitPoster from './images/td-monolit-poster.png';
 import imgEtotravel from './images/etotravel.png';
@@ -62,7 +64,17 @@ export const projectsData = [
     image: imgSkynet,
     poster: imgSkynetPoster,
     description: `
-    Repair company. Cartridge refilling, equipment repair.
+      Repair company. Cartridge refilling, equipment repair.
+    `,
+  },
+  {
+    id: 'privateproxy',
+    name: 'PrivateProxy',
+    image: imgPrivateproxy,
+    poster: imgPrivateproxyPoster,
+    link: 'https://privateproxy.me/',
+    description: `
+      Provider 100% clean private proxies for multiple purposes, such as Data Scraping, Research, Bots and more
     `,
   },
   {
@@ -72,7 +84,7 @@ export const projectsData = [
     image: imgMedinfo,
     poster: imgMedinfoPoster,
     description: `
-      
+      News portal of regional healthcare of the Tyumen region
     `,
   },
   {
@@ -82,7 +94,7 @@ export const projectsData = [
     image: imgUat,
     poster: imgUatPoster,
     description: `
-      
+      Interregional non-profit organization. Public association for the purpose of ensuring the protection of rights and representation of interests
     `,
   },
   {
@@ -91,6 +103,9 @@ export const projectsData = [
     link: 'https://td-monolit.com/',
     image: imgTdmonolit,
     poster: imgTdmonolitPoster,
+    description: `
+      Online retail store for building and finishing materials.
+    `,
   },
   {
     id: 'alliance',
@@ -98,19 +113,24 @@ export const projectsData = [
     link: 'https://alliancekb.ru/',
     image: imgAlliance,
     poster: imgAlliancePoster,
+    description: `
+      Timber processing company
+    `,
   },
   {
     id: 'freddo',
     name: 'Freddo',
-    description: 'Sale and installation of air conditioners',
     link: 'https://freddo96.ru/',
     image: imgFreddo,
     poster: imgFreddoPoster,
+    description: 'Sale and installation of air conditioners',
   },
   {
     id: 'tech-salt',
     name: 'Tech Salt',
     link: 'https://tech-salt.ru/',
+    image: imgTechSalt,
+    poster: imgTechSaltPoster,
     description: 'Wholesale technical salt',
   },
   {
@@ -119,6 +139,9 @@ export const projectsData = [
     link: 'https://buisnessplus.ru/',
     image: imgBuisnessplus,
     poster: imgBuisnessplusPoster,
+    description: `
+      Bookkeeping for legal entities and individuals.
+    `,
   },
   {
     id: 'doctorlevin',
@@ -126,6 +149,9 @@ export const projectsData = [
     link: 'https://doctorlevin.ru/',
     image: imgDoctorlevin,
     poster: imgDoctorlevinPoster,
+    description: `
+      Private Dentistry Center
+    `,
   },
   {
     id: 'lorstom',
@@ -133,6 +159,10 @@ export const projectsData = [
     link: 'https://lorstom.com/',
     image: imgLorstom,
     poster: imgLorstomPoster,
+    description: `
+      Center for Dentistry and ENT Surgery
+      Center No. 1 in Russia for the treatment of combined ENT and dental pathologies
+    `,
   },
   {
     id: 'sinuslifting',
@@ -140,6 +170,7 @@ export const projectsData = [
     link: 'https://sinuslifting.ru/',
     image: imgSinuslifting,
     poster: imgSinusliftingPoster,
+    description: ``,
   },
   {
     id: 'eto-travel',
@@ -148,21 +179,6 @@ export const projectsData = [
     poster: imgEtotravelPoster,
     link: 'https://eto.travel/',
     description: 'Платформа для турагентов и туристических продуктов',
-  },
-  {
-    id: 'privateproxy',
-    name: 'PrivateProxy',
-    image: imgPrivateproxy,
-    poster: imgPrivateproxyPoster,
-    link: 'https://privateproxy.me/',
-  },
-  {
-    id: 'skynet-print',
-    name: 'SkyNet Print',
-    link: 'https://skynet-print.ru/',
-    image: imgSkynet,
-    poster: imgSkynetPoster,
-    description: 'Repair of printers and refilling cartridges in Yekaterinburg',
   },
   {
     id: 'rollim',
@@ -178,6 +194,8 @@ export const projectsData = [
     link: 'https://stolen.city/ekaterinburg/',
     image: imgStolenEkaterinburg,
     poster: imgStolenEkaterinburgPoster,
-    description: '',
+    description: `
+      A project where a database of illegally occupied plots of land in Yekaterinburg is being collected, on which the owners of buildings arbitrarily create parking lots
+    `,
   },
 ];

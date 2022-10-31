@@ -6,7 +6,8 @@ const ListItem = styled.li`
   flex-direction: column;
   .picture {
     height: 200px;
-    aspect-ratio: 1;
+    width: 100%;
+    /* aspect-ratio: 1; */
     margin-bottom: 14px;
   }
   .picture__img {

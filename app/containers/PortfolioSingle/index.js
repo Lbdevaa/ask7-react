@@ -21,7 +21,8 @@ import LandingBrowser from 'components/LandingBrowser';
 import { Helmet } from 'react-helmet';
 import Wait from 'components/Wait';
 // import messages from './messages';
-import { projectsData } from 'data/projects/projectList-en';
+// import { projectsData } from 'data/projects/projectList-en';
+import { projectsData } from 'data/projects/projectList';
 import Breadcrumbs from './Breadcrumbs';
 
 /**
@@ -57,21 +58,21 @@ function PortfolioSingle() {
           <Container>
             <Helmet>
               <title>
-                {/* Проект {thisProjectData.name} | Студия разработки сайтов */}
-                Project {thisProjectData.name} | Website development studio
+                Проект {thisProjectData.name} | Студия разработки сайтов
+                {/* Project {thisProjectData.name} | Website development studio */}
               </title>
-              {/* <meta name="description" content="Портфолио" /> */}
-              <meta name="description" content="Portfolio" />
+              <meta name="description" content="Портфолио" />
+              {/* <meta name="description" content="Portfolio" /> */}
             </Helmet>
             <Breadcrumbs>
               <Link className="link breadcrumbs__link" to="/">
-                {/* Главная */}
-                Main
+                Главная
+                {/* Main */}
               </Link>
               |
               <Link className="link breadcrumbs__link" to="/portfolio">
-                {/* Портфолио */}
-                Portfolio
+                Портфолио
+                {/* Portfolio */}
               </Link>
               |<span className="breadcrumbs__text">{thisProjectData.name}</span>
             </Breadcrumbs>

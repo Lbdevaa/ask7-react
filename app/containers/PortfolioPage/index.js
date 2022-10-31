@@ -12,9 +12,10 @@ import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import NormalImg from 'components/Img';
 
-import Container from 'components/Container';
+import PortfolioPageContainer from 'components/PortfolioPageContainer';
 import PortfolioSingle from 'containers/PortfolioSingle/Loadable';
-import { projectsData } from 'data/projects/projectList-en';
+// import { projectsData } from 'data/projects/projectList-en';
+import { projectsData } from 'data/projects/projectList';
 // import messages from './messages';
 import List from './List';
 import ListItem from './ListItem';
@@ -32,40 +33,44 @@ export default function PortfolioPage() {
     <div>
       <Switch>
         <Route exact path={path}>
-          <Container>
+          <PortfolioPageContainer>
             <Helmet>
               <title>
-                {/* Портфолио студии | Студия разработки сайтов Александра Худякова */}
-                Studio portfolio | Website Development Studio Alexander
-                Khudyakov
+                Портфолио студии | Студия разработки сайтов Александра Худякова
+                {/* Studio portfolio | Website Development Studio Alexander Khudyakov */}
               </title>
-              {/* <meta name="description" content="Портфолио" /> */}
-              <meta name="description" content="Portfolio" />
+              <meta name="description" content="Портфолио" />
+              {/* <meta name="description" content="Portfolio" /> */}
             </Helmet>
             <h1 className="page-title">
-              Portfolio
+              {/* Portfolio */}
+              Портфолио
               {/* <FormattedMessage {...messages.header} /> */}
             </h1>
             <List>
               {projectsData.map(({ id, poster, name, description }) => (
                 <ListItem key={id}>
-                  <Img
-                    src={poster || ''}
-                    className="protfolio__img"
-                    alt={name || 'Проект'}
-                  />
-                  <ListItemTitle>{name}</ListItemTitle>
+                  <Link className="link" to={`${url}/${id}`}>
+                    <Img
+                      src={poster || ''}
+                      className="protfolio__img"
+                      alt={name || 'Проект'}
+                    />
+                  </Link>
+                  <Link className="link" to={`${url}/${id}`}>
+                    <ListItemTitle>{name}</ListItemTitle>
+                  </Link>
                   <div className="text-box">
                     <p>{description}</p>
                   </div>
                   <Link className="link" to={`${url}/${id}`}>
-                    {/* Посмотреть */}
-                    More
+                    Посмотреть
+                    {/* More */}
                   </Link>
                 </ListItem>
               ))}
             </List>
-          </Container>
+          </PortfolioPageContainer>
         </Route>
         <Route path={`${path}/:slug`}>
           <PortfolioSingle />

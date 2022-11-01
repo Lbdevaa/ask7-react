@@ -8,7 +8,13 @@
  */
 
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useLocation,
+  Redirect,
+} from 'react-router-dom';
 import 'components/alert.css';
 
 import HomePage from 'containers/HomePage/Loadable';
@@ -16,15 +22,19 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import PortfolioPage from 'containers/PortfolioPage/Loadable';
 
 import Header from 'components/Header';
+import WorkersPage from 'containers/WorkersPage';
 
 export default function App() {
+  const { pathname } = useLocation();
   return (
     <div>
       <Header />
       <Router>
         <Switch>
+          <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
           <Route exact path="/" component={HomePage} />
           <Route path="/portfolio" component={PortfolioPage} />
+          <Route path="/workers" component={WorkersPage} />
           <Route component={NotFoundPage} />
         </Switch>
       </Router>

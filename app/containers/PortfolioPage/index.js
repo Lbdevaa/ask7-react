@@ -24,9 +24,6 @@ import ListItemTitle from './ListItemTitle';
 const Img = styled(NormalImg)``;
 
 export default function PortfolioPage() {
-  // The `path` lets us build <Route> paths that are
-  // relative to the parent route, while the `url` lets
-  // us build relative links.
   const { path, url } = useRouteMatch();
 
   return (

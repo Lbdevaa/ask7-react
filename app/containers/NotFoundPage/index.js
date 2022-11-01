@@ -12,8 +12,12 @@ import messages from './messages';
 
 export default function NotFound() {
   return (
-    <h1>
-      <FormattedMessage {...messages.header} />
-    </h1>
+    <div className="content-error-page">
+      <div className="container">
+        <h1>
+          <FormattedMessage {...messages.header} />
+        </h1>
+      </div>
+    </div>
   );
 }

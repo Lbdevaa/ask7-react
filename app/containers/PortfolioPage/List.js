@@ -4,9 +4,13 @@ const List = styled.ul`
   padding-left: 0;
   margin: 0 0 50px;
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  grid-gap: 30px;
+  width: 30vw;
+  width: 100vw;
+  column-width: 2em;
+  gap: var(--gap);
+  transform: scale(8.2);
+  will-change: transform;
+  transition: transform 1s cubic-bezier(0.075, 1, 0.25, 1), opacity 1s;
 `;
 
 export default List;

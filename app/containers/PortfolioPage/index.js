@@ -5,7 +5,7 @@
  */
 import React from 'react';
 
-import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { Helmet } from 'react-helmet';
 // import { FormattedMessage } from 'react-intl';
@@ -17,14 +17,15 @@ import PortfolioSingle from 'containers/PortfolioSingle/Loadable';
 // import { projectsData } from 'data/projects/projectList-en';
 import { projectsData } from 'data/projects/projectList';
 // import messages from './messages';
+// import Draggable from 'react-draggable';
 import List from './List';
 import ListItem from './ListItem';
-import ListItemTitle from './ListItemTitle';
+// import ListItemTitle from './ListItemTitle';
 
 const Img = styled(NormalImg)``;
 
 export default function PortfolioPage() {
-  const { path, url } = useRouteMatch();
+  const { path } = useRouteMatch();
 
   return (
     <div>
@@ -44,29 +45,30 @@ export default function PortfolioPage() {
               Портфолио
               {/* <FormattedMessage {...messages.header} /> */}
             </h1>
+            {/* <Draggable> */}
             <List>
-              {projectsData.map(({ id, poster, name, description }) => (
+              {projectsData.map(({ id, poster, name }) => (
                 <ListItem key={id}>
-                  <Link className="link" to={`${url}/${id}`}>
-                    <Img
-                      src={poster || ''}
-                      className="protfolio__img"
-                      alt={name || 'Проект'}
-                    />
-                  </Link>
-                  <Link className="link" to={`${url}/${id}`}>
-                    <ListItemTitle>{name}</ListItemTitle>
-                  </Link>
-                  <div className="text-box">
-                    <p>{description}</p>
-                  </div>
-                  <Link className="link" to={`${url}/${id}`}>
-                    Посмотреть
-                    {/* More */}
-                  </Link>
+                  {/* <Link className="link" to={`${url}/${id}`}> */}
+                  <Img
+                    src={poster || ''}
+                    className="protfolio__img"
+                    alt={name || 'Проект'}
+                  />
+                  {/* </Link> */}
+                  {/* <Link className="link" to={`${url}/${id}`}>
+                      <ListItemTitle>{name}</ListItemTitle>
+                    </Link>
+                    <div className="text-box">
+                      <p>{description}</p>
+                    </div>
+                    <Link className="link" to={`${url}/${id}`}>
+                      Посмотреть
+                    </Link> */}
                 </ListItem>
               ))}
             </List>
+            {/* </Draggable> */}
           </PortfolioPageContainer>
         </Route>
         <Route path={`${path}/:slug`}>

@@ -18,6 +18,7 @@ import { Helmet } from 'react-helmet';
 
 // const Img = styled(NormalImg)``;
 import { workersData } from 'data/workers/workersList';
+import Breadcrumbs from 'components/Breadcrumbs';
 
 export default function WorkerSingle() {
   const { slug } = useParams();
@@ -36,9 +37,18 @@ export default function WorkerSingle() {
             </title>
             <meta name="description" content="Портфолио" />
           </Helmet>
-          <Link className="link breadcrumbs__link" to="/">
-            Главная
-          </Link>
+          <Breadcrumbs>
+            <Link className="link breadcrumbs__link" to="/">
+              Главная
+              {/* Main */}
+            </Link>
+            |
+            <Link className="link breadcrumbs__link" to="/workers">
+              Сотрудники
+              {/* Portfolio */}
+            </Link>
+            |<span className="breadcrumbs__text">{thisWorkerData.name}</span>
+          </Breadcrumbs>
           <h1 className="page-title">Сотрудник {thisWorkerData.name}</h1>
         </Route>
         <Route path={`${path}/:slug`}>

@@ -23,7 +23,7 @@ import Wait from 'components/Wait';
 // import messages from './messages';
 // import { projectsData } from 'data/projects/projectList-en';
 import { projectsData } from 'data/projects/projectList';
-import Breadcrumbs from './Breadcrumbs';
+import Breadcrumbs from 'components/Breadcrumbs';
 
 /**
  * Single post view (/:slug)

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-testing-library';
 
-import ListItem from '../ListItem';
+import ListItem from '../PortfolioListItem';
 
 describe('<ListItem />', () => {
   it('should render an <li> tag', () => {

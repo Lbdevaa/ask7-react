@@ -21,14 +21,12 @@ import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import PortfolioPage from 'containers/PortfolioPage/Loadable';
 
-import Header from 'components/Header';
 import WorkersPage from 'containers/WorkersPage';
 
 export default function App() {
   const { pathname } = useLocation();
   return (
     <div>
-      <Header />
       <Router>
         <Switch>
           <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />

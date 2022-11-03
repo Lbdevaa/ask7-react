@@ -14,6 +14,7 @@ function Img(props) {
     <picture className={`${props.className} picture`}>
       <source src={props.src} type="image/svg+xml" />
       <img
+        draggable="false"
         className="picture__img"
         src={props.src}
         alt={props.alt}

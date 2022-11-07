@@ -3,25 +3,40 @@
  *
  * List all the features
  */
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { Helmet } from 'react-helmet';
-// import { FormattedMessage } from 'react-intl';
-// import styled from 'styled-components';
-// import NormalImg from 'components/Img';
 
 import PortfolioPageContainer from 'components/PortfolioPageContainer';
 import PortfolioSingle from 'containers/PortfolioSingle/Loadable';
 // import { projectsData } from 'data/projects/projectList-en';
 import { projectsData } from 'data/projects/projectList';
-import Draggable from 'react-draggable';
+import gsap from 'gsap';
+import { Draggable } from 'gsap/Draggable';
+
 import PortfolioList from './PortfolioList';
+import InertiaPlugin from '../../utils/libs/inert';
+gsap.registerPlugin(Draggable, InertiaPlugin);
+
 // import messages from './messages';
 
 export default function PortfolioPage() {
   const { path } = useRouteMatch();
+
+  const portfolioBox = useRef();
+  useEffect(() => {
+    gsap.to(portfolioBox.current, {
+      duration: 4,
+      x: 350,
+    });
+
+    Draggable.create(portfolioBox.current, {
+      bounds: 'body',
+      inertia: true,
+    });
+  });
 
   return (
     <>
@@ -41,11 +56,11 @@ export default function PortfolioPage() {
               Портфолио
               {/* <FormattedMessage {...messages.header} /> */}
             </h1>
-            <Draggable bounds="parent">
+            <div bounds="parent" ref={portfolioBox}>
               <div>
                 <PortfolioList data={projectsData} />
               </div>
-            </Draggable>
+            </div>
           </PortfolioPageContainer>
         </Route>
         <Route path={`${path}/:slug`}>

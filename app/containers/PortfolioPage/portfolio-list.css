@@ -6,7 +6,7 @@
   /* width: 100vw; */
   column-width: 4em;
   gap: 9px;
-  transform: scale(8.2);
+  transform: scale(5.5);
   will-change: transform;
   transition: transform 1s cubic-bezier(0.075, 1, 0.25, 1), opacity 1s;
   cursor: grab;

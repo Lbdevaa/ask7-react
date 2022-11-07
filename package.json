@@ -50,6 +50,9 @@
     "IE 10"
   ],
   "lint-staged": {
+    "ignore": [
+      "app/utils/libs"
+    ],
     "*.js": [
       "npm run lint:eslint:fix",
       "git add --force"

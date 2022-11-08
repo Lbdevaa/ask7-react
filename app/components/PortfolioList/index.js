@@ -1,25 +1,30 @@
-// import styled from 'styled-components';
-
 import React from 'react';
 import PropTypes from 'prop-types';
-// import Img from 'components/Img';
 import Img from 'components/Img';
-import PortfolioListItem from './PortfolioListItem';
-
-import './portfolio-list.css';
+import { useRouteMatch } from 'react-router-dom';
+import PortfolioListItem from '../PortfolioListItem';
+import './index.sass';
 
 const PortfolioList = props => {
+  const { url } = useRouteMatch();
   const dataProject = props.data;
+  const { className, ref } = props;
 
   return (
-    <ul className="portfolio-list">
+    <ul className={`portfolio-list ${className}`} ref={ref}>
       {dataProject.map(item => (
-        <PortfolioListItem key={item.id}>
+        <PortfolioListItem key={item.id} linkTo={`${url}/${item.id}`}>
           <Img
-            src={item.poster || ''}
+            src={item.image || ''}
             className="portfolio-item__img"
             alt={item.name || 'Проект'}
           />
+          <div className="portfolio-item__content">
+            <h2 className="portfolio-item__title">{item.name}</h2>
+            <div className="portfolio-item__text-box text-box">
+              <p>{item.description}</p>
+            </div>
+          </div>
         </PortfolioListItem>
       ))}
     </ul>
@@ -28,17 +33,14 @@ const PortfolioList = props => {
 
 PortfolioList.propTypes = {
   data: PropTypes.array,
+  className: PropTypes.string,
+  ref: PropTypes.any,
 };
 
 export default PortfolioList;
 
 //  {item.id}
 //  <Link className="link" to={`${url}/${id}`}>
-//  <Img
-//     src={item.poster || ''}
-//     className="protfolio__img"
-//     alt={item.name || 'Проект'}
-//   />
 //  </Link>
 //  <Link className="link" to={`${url}/${id}`}>
 //     <ListItemTitle>{name}</ListItemTitle>

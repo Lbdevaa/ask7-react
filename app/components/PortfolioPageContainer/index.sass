@@ -6,12 +6,38 @@
   align-items: center
   background: #111
   color: #fff
+  // padding: 10px 0
   @media (max-width: 767px)
-    padding: 0 17px
-  .page-title
+    padding: 0 10px
+    overflow: unset
+    display: block
+    height: auto
+  &__header
     position: absolute
-    font-weight: 200
-    text-align: center
-    font-size: 5rem
-    font-weight: 600
     z-index: 0
+    text-align: center
+    opacity: .9
+    user-select: none
+    @media (max-width: 767px)
+      position: relative
+      padding: 14px 0
+
+  .page-title
+    font-size: 5rem
+    font-weight: 300
+    text-transform: uppercase
+    font-family: Geneva, Verdana, sans-serif
+    letter-spacing: .1em
+    margin: 0
+    @media (max-width: 767px)
+      font-size: 2rem
+  .page-subtitle
+    font-size: 2rem
+    margin: .5rem
+    font-weight: 300
+    font-family: Geneva, Verdana, sans-serif
+    transition: .25s ease opacity
+    @media (max-width: 767px)
+      font-size: 1rem
+    &.opacity
+      opacity: 0

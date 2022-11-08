@@ -1,0 +1,21 @@
+.portfolio-list
+  padding-left: 0
+  list-style: none
+  padding-bottom: 50px
+  margin: 0
+  width: 30vw
+  column-width: 4em
+  gap: 9px
+  transform: scale(5.5)
+  will-change: transform
+  transition: transform 1s cubic-bezier(0.075, 1, 0.25, 1), opacity 1s
+  cursor: grab
+  opacity: 0
+  &.loaded
+    opacity: 1
+
+@media (max-width: 767px)
+  .portfolio-list
+    column-width: 10em
+    transform: scale(1)
+    width: 100%

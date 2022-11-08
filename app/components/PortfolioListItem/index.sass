@@ -1,0 +1,71 @@
+.portfolio-item
+  margin: 0 0 14px
+  transform: scale(1.001)
+  will-change: transform
+  transition: .3s
+  user-select: none
+  overflow: hidden
+  &:nth-child(odd)
+    .picture
+      max-height: 30px
+      @media (max-width: 767px)
+        max-height: 160px
+  &:hover
+    .portfolio-item__content
+      opacity: 1
+  &__link
+    position: relative
+    display: block
+    overflow: hidden
+  .picture
+    width: 100%
+    display: block
+    background: #eee
+    width: 100%
+    height: 100%
+    max-height: 80px
+    @media (max-width: 767px)
+      max-height: 200px
+    &__img
+      object-fit: contain
+      object-fit: cover
+      object-position: top
+      width: 100%
+      height: 100%
+  &__content
+    position: absolute
+    top: 0
+    z-index: 1
+    opacity: 0
+    width: 100%
+    height: 100%
+    padding: 2px
+    left: 0
+    top: 0
+    display: flex
+    justify-content: center
+    gap: 2px
+    text-align: center
+    flex-direction: column
+    background: #00000090
+    color: #fff
+    transition: .25s ease opacity
+    @media (max-width: 767px)
+      opacity: 1
+  &__title
+    font-weight: bold
+    margin: 0
+    line-height: 1.4
+    font-size: calc(24px / 5.5)
+    @media (max-width: 767px)
+      font-size: 18px
+  &__text-box
+    p
+      font-size: calc(18px / 5.5)
+      margin: 0 0 calc(5px / 5.5)
+      display: -webkit-box
+      -webkit-box-orient: vertical
+      overflow: hidden
+      -webkit-line-clamp: 2
+      @media (max-width: 767px)
+        font-size: 14px

@@ -55,9 +55,7 @@ export default function WorkersPage() {
             </ul>
           </WorkersPageContainer>
         </Route>
-        <Route path={`${path}/:slug`}>
-          <WorkerSingle />
-        </Route>
+        <Route path={`${path}/:slug`} component={WorkerSingle} />
       </Switch>
     </div>
   );

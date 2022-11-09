@@ -72,9 +72,7 @@ export default function PortfolioPage() {
           />
         </PortfolioPageContainer>
       </Route>
-      <Route path={`${path}/:slug`}>
-        <PortfolioSingle />
-      </Route>
+      <Route path={`${path}/:slug`} component={PortfolioSingle} />
     </Switch>
   );
 }

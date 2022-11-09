@@ -15,21 +15,19 @@ import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import PortfolioPage from 'containers/PortfolioPage/Loadable';
 
-import WorkersPage from 'containers/WorkersPage';
+// import WorkersPage from 'containers/WorkersPage';
 
 export default function App() {
   // const { pathname } = useLocation();
   return (
-    <div>
-      <Router>
-        <Switch>
-          {/* <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} /> */}
-          <Route exact path="/" component={HomePage} />
-          <Route path="/portfolio" component={PortfolioPage} />
-          <Route path="/workers" component={WorkersPage} />
-          <Route component={NotFoundPage} />
-        </Switch>
-      </Router>
-    </div>
+    <Router>
+      <Switch>
+        {/* <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} /> */}
+        <Route exact path="/" component={HomePage} />
+        <Route path="/portfolio" component={PortfolioPage} />
+        {/* <Route path="/workers" component={WorkersPage} /> */}
+        <Route component={NotFoundPage} />
+      </Switch>
+    </Router>
   );
 }
